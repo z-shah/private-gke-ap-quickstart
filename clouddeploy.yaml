@@ -5,27 +5,15 @@ metadata:
 description: main application pipeline
 serialPipeline:
  stages:
- - targetId: dev
-   profiles: []
- - targetId: prod
+ - targetId: private-gke-autopilot
    profiles: []
 ---
 
 apiVersion: deploy.cloud.google.com/v1
 kind: Target
 metadata:
- name: dev
-description: development cluster
+ name: private-gke-autopilot
+description: private gke autopilot cluster
 gke:
- cluster: projects/gke-demo-347012/locations/australia-southeast1/clusters/dev-cluster
+ cluster: projects/gke-demo-347012/locations/australia-southeast1/clusters/ap-private-cluster
  
----
-
-apiVersion: deploy.cloud.google.com/v1
-kind: Target
-metadata:
- name: prod
-description: production cluster
-requireApproval: true
-gke:
- cluster: projects/gke-demo-347012/locations/australia-southeast1/clusters/prod-cluster
