@@ -1,0 +1,41 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: gateway-impersonate
+rules:
+- apiGroups:
+  - ""
+  resourceNames:
+  - admin@zaynabs.altostrat.com
+  - my-build-sa@gke-demo-347012.iam.gserviceaccount.com
+  resources:
+  - users
+  verbs:
+  - impersonate
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: gateway-impersonate
+roleRef:
+  kind: ClusterRole
+  name: gateway-impersonate
+  apiGroup: rbac.authorization.k8s.io
+subjects:
+- kind: ServiceAccount
+  name: connect-agent-sa
+  namespace: gke-connect
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: gateway-cluster-admin
+subjects:
+- kind: User
+  name: admin@zaynabs.altostrat.com
+- kind: User
+  name: my-build-sa@gke-demo-347012.iam.gserviceaccount.com
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
