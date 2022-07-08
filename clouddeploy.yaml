@@ -16,4 +16,8 @@ metadata:
 description: private gke autopilot cluster
 gke:
  cluster: projects/gke-demo-347012/locations/australia-southeast1/clusters/ap-private-cluster
- 
+executionConfigs:
+     - usages:
+       - RENDER
+       - DEPLOY
+       serviceAccount: my-build-sa@gke-demo-347012.iam.gserviceaccount.com
