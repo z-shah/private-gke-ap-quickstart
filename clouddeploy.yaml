@@ -18,7 +18,7 @@ anthosCluster:
  membership: projects/gke-demo-347012/locations/australia-southeast1/memberships/ap-private-cluster
 executionConfigs:
 - defaultPool:
-     - usages:
-       - RENDER
-       - DEPLOY
-       serviceAccount: my-build-sa@gke-demo-347012.iam.gserviceaccount.com
+    serviceAccount: my-build-sa@gke-demo-347012.iam.gserviceaccount.com
+  usages:
+    - RENDER
+    - DEPLOY
