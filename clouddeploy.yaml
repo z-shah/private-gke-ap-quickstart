@@ -14,8 +14,8 @@ kind: Target
 metadata:
  name: private-gke-autopilot
 description: private gke autopilot cluster
-gke:
- cluster: projects/gke-demo-347012/locations/australia-southeast1/clusters/ap-private-cluster
+anthosCluster:
+ membership: projects/gke-demo-347012/locations/australia-southeast1/memberships/ap-private-cluster
 executionConfigs:
      - usages:
        - RENDER
