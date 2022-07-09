@@ -26,3 +26,12 @@ gcloud container fleet memberships register ap-private-cluster         \
 
 1. Grant IAM roles to users/SA [refer docs](https://cloud.google.com/anthos/multicluster-management/gateway/setup#grant_iam_roles_to_users)
 
+
+```
+gcloud projects add-iam-policy-binding gke-demo-347012 \
+    --member=serviceAccount:my-build-sa@gke-demo-347012.iam.gserviceaccount.com \
+    --role=roles/gkehub.gatewayEditor
+gcloud projects add-iam-policy-binding gke-demo-347012 \
+    --member=serviceAccount:my-build-sa@gke-demo-347012.iam.gserviceaccount.com \
+    --role=roles/gkehub.viewer
+```
