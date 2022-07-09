@@ -19,7 +19,7 @@ steps:
   args:
     [
       "deploy", "releases", "create", "rel-${SHORT_SHA}",
-      "--delivery-pipeline", "hello-app",
+      "--delivery-pipeline", "private-gke-autopilot",
       "--region", "${_LOCATION}",
       "--annotations", "commitId=${REVISION_ID}",
       "--images", "hello-app=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${COMMIT_SHA}"]
