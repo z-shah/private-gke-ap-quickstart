@@ -1,6 +1,6 @@
 ### Deploy a sample app to private gke autopilot cluster
 
-Prequisites
+__Prequisites__
 
 1. Enable necessary APIs [refer](https://cloud.google.com/deploy/docs/integrating-ci#before_you_begin)
 
