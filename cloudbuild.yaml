@@ -1,10 +1,9 @@
 steps:
   - name: "gcr.io/cloud-builders/kubectl"
-    args: ["get", "nodes"
+    args: ["get", "nodes"]
     env:
       - "CLOUDSDK_COMPUTE_REGION=us-central1"
       - "CLOUDSDK_CONTAINER_CLUSTER=staging-private"
 options:
-  env:
   workerPool: "projects/$PROJECT_ID/locations/us-central1/workerPools/private-pool"
 timeout: 3600s
