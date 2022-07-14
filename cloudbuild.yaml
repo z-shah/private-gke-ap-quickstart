@@ -3,8 +3,8 @@ steps:
   entrypoint: 'kubectl'
   args: ['get', 'nodes']
   env:
-  - "CLOUDSDK_COMPUTE_REGION=$LOCATION"
-  - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}"
+  - 'CLOUDSDK_COMPUTE_REGION=us-central1'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=test-private'
 options:
   logging: CLOUD_LOGGING_ONLY
   workerPool:
