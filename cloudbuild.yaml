@@ -6,5 +6,5 @@ steps:
   - 'CLOUDSDK_CONTAINER_CLUSTER=staging-private'
 options:
   workerPool:
-    'projects/$GOOGLE_CLOUD_PROJECT/locations/us-central1/workerPools/private-pool'
+    'projects/$PROJECT_ID/locations/us-central1/workerPools/private-pool'
  logging: CLOUD_LOGGING_ONLY
