@@ -5,7 +5,6 @@ steps:
   env:
   - "CLOUDSDK_COMPUTE_REGION=$LOCATION"
   - "CLOUDSDK_CONTAINER_CLUSTER=${_CLUSTER_NAME}"
-serviceAccount: 'projects/$PROJECT_ID/serviceAccounts/my-build-sa@$PROJECT_ID.iam.gserviceaccount.com'
 options:
   logging: CLOUD_LOGGING_ONLY
   workerPool:
