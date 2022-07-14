@@ -4,6 +4,7 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_REGION=us-central1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=private-pool'
+serviceAccount: 'projects/$PROJECT_ID/serviceAccounts/my-build-sa@$PROJECT_ID.iam.gserviceaccount.com'
 options:
   logging: CLOUD_LOGGING_ONLY
   workerPool:
