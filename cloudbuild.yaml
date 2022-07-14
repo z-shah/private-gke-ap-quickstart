@@ -1,29 +1,10 @@
 steps:
-
-# Build hello-app nd tag using commit sha
-- name: 'gcr.io/cloud-builders/docker'
-  args:
-    - 'build'
-    - '-t'
-    - '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${COMMIT_SHA}'
-    - '.'
-
-# Push the container image.
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', '${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${COMMIT_SHA}']
-
-
-# Create release in Google Cloud Deploy
-- name: gcr.io/google.com/cloudsdktool/cloud-sdk
-  entrypoint: gcloud
-  args:
-    [
-      "deploy", "releases", "create", "rel-${SHORT_SHA}",
-      "--delivery-pipeline", "private-gke-autopilot",
-      "--region", "${_LOCATION}",
-      "--annotations", "commitId=${REVISION_ID}",
-      "--images", "hello-app=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${COMMIT_SHA}"]
-
+  - name: "gcr.io/cloud-builders/kubectl"
+    args: ["get", "nodes"
+    env:
+      - "CLOUDSDK_COMPUTE_REGION=us-central1"
+      - "CLOUDSDK_CONTAINER_CLUSTER=staging-private"
 options:
- logging: CLOUD_LOGGING_ONLY
+  env:
+  workerPool: "projects/$PROJECT_ID/locations/us-central1/workerPools/private-pool"
 timeout: 3600s
