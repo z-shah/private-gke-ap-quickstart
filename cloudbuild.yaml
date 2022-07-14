@@ -2,10 +2,10 @@ steps:
 - name: "gcr.io/cloud-builders/kubectl"
   args: ['get', 'nodes']
   env:
-  - 'CLOUDSDK_COMPUTE_REGION=us-central1'
-  - 'CLOUDSDK_CONTAINER_CLUSTER=private-pool'
+  - 'CLOUDSDK_COMPUTE_REGION=$LOCATION'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=$_CLUSTER_NAME'
 serviceAccount: 'projects/$PROJECT_ID/serviceAccounts/my-build-sa@$PROJECT_ID.iam.gserviceaccount.com'
 options:
   logging: CLOUD_LOGGING_ONLY
   workerPool:
-    'projects/$PROJECT_ID/locations/us-central1/workerPools/private-pool'
+    'projects/$PROJECT_ID/locations/$LOCATION/workerPools/private-pool'
