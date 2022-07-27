@@ -22,6 +22,7 @@ steps:
       "--delivery-pipeline", "ap-private-cluster-del-pipeline",
       "--region", "${_LOCATION}",
       "--annotations", "commitId=${REVISION_ID}",
+      "--verbosity", "debug",
       "--images", "hello-app=${_LOCATION}-docker.pkg.dev/$PROJECT_ID/${_REPOSITORY}/${_IMAGE}:${COMMIT_SHA}"]
 
 options:
