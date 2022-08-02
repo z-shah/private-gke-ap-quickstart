@@ -1,21 +1,21 @@
 apiVersion: deploy.cloud.google.com/v1
 kind: DeliveryPipeline
 metadata:
- name: ap-private-cluster-del-pipeline 
+ name: my-private-cluster-pipeline 
 description: main application pipeline
 serialPipeline:
  stages:
- - targetId: ap-private-cluster
+ - targetId: my-private-cluster
    profiles: []
 ---
 
 apiVersion: deploy.cloud.google.com/v1
 kind: Target
 metadata:
- name: ap-private-cluster
-description: private autopilot cluster
+ name: my-private-cluster
+description: private cluster
 anthosCluster:
- membership: projects/gke-demo-347012/locations/australia-southeast1/memberships/ap-private-cluster
+ membership: projects/gke-demo-347012/locations/australia-southeast1-a/memberships/my-private-cluster
 executionConfigs:
 - defaultPool:
     serviceAccount: connect-gw-sa@gke-demo-347012.iam.gserviceaccount.com
