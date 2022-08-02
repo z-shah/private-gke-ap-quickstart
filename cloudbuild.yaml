@@ -19,7 +19,7 @@ steps:
   args:
     [
       "deploy", "releases", "create", "rel-${SHORT_SHA}",
-      "--delivery-pipeline", "ap-private-cluster-del-pipeline",
+      "--delivery-pipeline", "my-private-cluster-pipeline",
       "--region", "${_LOCATION}",
       "--annotations", "commitId=${REVISION_ID}",
       "--verbosity", "debug",
