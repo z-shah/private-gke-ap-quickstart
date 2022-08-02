@@ -15,7 +15,7 @@ metadata:
  name: my-private-cluster
 description: private cluster
 anthosCluster:
- membership: projects/gke-demo-347012/locations/australia-southeast1-a/memberships/my-private-cluster
+ membership: projects/gke-demo-347012/locations/australia-southeast1/memberships/autopilot-cluster-0	
 executionConfigs:
 - defaultPool:
     serviceAccount: connect-gw-sa@gke-demo-347012.iam.gserviceaccount.com
