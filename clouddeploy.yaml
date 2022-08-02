@@ -1,19 +1,19 @@
 apiVersion: deploy.cloud.google.com/v1
 kind: DeliveryPipeline
 metadata:
- name: my-private-cluster-pipeline 
+ name: autopilot-cluster-pipeline 
 description: main application pipeline
 serialPipeline:
  stages:
- - targetId: my-private-cluster
+ - targetId: autopilot-cluster
    profiles: []
 ---
 
 apiVersion: deploy.cloud.google.com/v1
 kind: Target
 metadata:
- name: my-private-cluster
-description: private cluster
+ name: autopilot-cluster
+description: autopilot cluster 
 anthosCluster:
  membership: projects/gke-demo-347012/locations/australia-southeast1/memberships/autopilot-cluster-0	
 executionConfigs:
